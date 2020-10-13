@@ -1,0 +1,281 @@
+@keyframes bubbleMover {
+	0% {
+		-webkit-transform: translateY(0px) translateX(0) rotate(0);
+		transform: translateY(0px) translateX(0) rotate(0);
+	}
+
+	30% {
+		-webkit-transform: translateY(30px) translateX(50px) rotate(15deg);
+		transform: translateY(30px) translateX(50px) rotate(15deg);
+		-webkit-transform-origin: center center;
+		transform-origin: center center;
+	}
+
+	50% {
+		-webkit-transform: translateY(50px) translateX(100px) rotate(45deg);
+		transform: translateY(50px) translateX(100px) rotate(45deg);
+		-webkit-transform-origin: right bottom;
+		transform-origin: right bottom;
+	}
+
+	80% {
+		-webkit-transform: translateY(30px) translateX(50px) rotate(15deg);
+		transform: translateY(30px) translateX(50px) rotate(15deg);
+		-webkit-transform-origin: left top;
+		transform-origin: left top;
+	}
+
+	100% {
+		-webkit-transform: translateY(0px) translateX(0) rotate(0);
+		transform: translateY(0px) translateX(0) rotate(0);
+		-webkit-transform-origin: center center;
+		transform-origin: center center;
+	}
+}
+
+@keyframes bannerShake {
+	0% {
+		-webkit-transform: rotate3d(0, 1, 0, 0deg);
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+
+	30% {
+		-webkit-transform: rotate3d(0, 0, 1, 5deg);
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	60% {
+		-webkit-transform: rotate3d(1, 0, 0, 0deg);
+		transform: rotate3d(1, 0, 0, 0deg);
+	}
+
+	80% {
+		-webkit-transform: rotate3d(0, 0, 1, 5deg);
+		transform: rotate3d(0, 0, 1, 5deg);
+	}
+
+	100% {
+		-webkit-transform: rotate3d(0, 1, 0, 0deg);
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+}
+.banner-one {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+
+.banner-one::before {
+	content: "";
+	width: 100%;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	clip-path: polygon(71.5% 0, 0% 100%, 100% 100%);
+}
+
+@media (max-width: 991px) {
+	.banner-one::before {
+		height: 80px;
+	}
+}
+
+.banner-one .container {
+	position: relative;
+	padding-top: 320px;
+	padding-bottom: 275px;
+}
+
+.banner-one__moc {
+	position: absolute;
+	bottom: 45px;
+	right: -30px;
+	animation: ImgBounce 5s ease-in-out 0s infinite alternate;
+}
+
+.banner-one__content h3 {
+	margin: 0;
+	font-size: 70px;
+	text-transform: uppercase;
+	line-height: 80px;
+	font-weight: 300;
+	color: #fff;
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.banner-one__content p {
+	margin: 0;
+	font-size: 18px;
+	line-height: 32px;
+	font-weight: 300;
+	color: #ffffff;
+}
+
+.banner-one__btn {
+	padding: 16px 56px;
+	background-image: none;
+	border: 2px solid #fff;
+	margin-top: 40px;
+}
+
+.banner-one__btn:hover {
+	background-color: #fff;
+	color: var(--thm-black);
+}
+
+.banner-one__content .banner-one__tag-line {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.1);
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	color: #ffffff;
+	letter-spacing: 0.2em;
+	border-radius: 5px;
+	overflow: hidden;
+	padding-left: 30px;
+	line-height: 40px;
+}
+
+.banner-one__content .banner-one__tag-line a {
+	display: inline-block;
+	vertical-align: middle;
+	background-color: #feec66;
+	color: #23242b;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-left: 25px;
+	transition: all 500ms ease;
+}
+
+.banner-one__content .banner-one__tag-line a:hover {
+	background-color: var(--thm-black);
+	color: #fff;
+}
+
+[class*="banner-one__shape-"] {
+	position: absolute;
+}
+
+.banner-one__shape-moc-1 {
+	top: 15%;
+	right: -9%;
+	-webkit-transform-origin: center bottom;
+	transform-origin: center bottom;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: bounce;
+	animation-name: bounce;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+	-webkit-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.banner-one__shape-1 {
+	top: 3%;
+	left: 0;
+}
+
+.banner-one__shape-2 {
+	top: 17%;
+	left: 7%;
+	-webkit-transform-origin: center bottom;
+	transform-origin: center bottom;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-name: bannerShake;
+	animation-name: bannerShake;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+	-webkit-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.banner-one__shape-3 {
+	bottom: 19%;
+	left: 6%;
+}
+
+.banner-one__shape-4 {
+	top: 19%;
+	right: 45%;
+	-webkit-animation-name: bubbleMover;
+	animation-name: bubbleMover;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	animation-duration: 8s;
+}
+
+.banner-one__shape-5 {
+	bottom: 19%;
+	left: 6%;
+	-webkit-animation-name: bubbleMover;
+	animation-name: bubbleMover;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	animation-duration: 10s;
+}
+
+.banner-one__shape-6 {
+	bottom: 29%;
+	right: 30%;
+	-webkit-animation-name: shapeMover;
+	animation-name: shapeMover;
+	-webkit-animation-duration: 9s;
+	animation-duration: 9s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+.banner-one__shape-7 {
+	bottom: 19%;
+	right: 6%;
+	-webkit-animation-name: shapeMover;
+	animation-name: shapeMover;
+	-webkit-animation-duration: 9s;
+	animation-duration: 9s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	animation-delay: 2s;
+}
+
+.thm-btn {
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	background-image: linear-gradient(90deg, #f837ff 0%, #4517dd 51%, #9a12e4 100%);
+	text-align: center;
+	background-size: 200% auto;
+	border-radius: 5px;
+	color: #fff;
+	padding: 18px 50px;
+	font-size: 18px;
+	font-weight: 600;
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+}
+
+.thm-btn:hover {
+	color: #fff;
+	background-position: right center;
+}
